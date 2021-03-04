@@ -37,9 +37,7 @@ Module.register("MMM-CountDown",{
 		var target = new Date(this.config.date);
 		var timeDiff = target - today;
 		
-		console.log('today', today);
-		console.log('target', target);
-		console.log('timeDiff', timeDiff);		
+		console.log(this.config.event + ' initial target', target);		
 		
 		while (timeDiff < 0) {
 			if (this.config.loopBy == 'y') {
@@ -48,7 +46,7 @@ Module.register("MMM-CountDown",{
 				target = new Date(target.getFullYear(), target.getMonth() + 1, target.getDay());
 			}
 			timeDiff = target - today;
-			console.log('timeDiff after loop', timeDiff);
+			console.log(this.config.event + ' target after loop', target);
         	}
 
 		// Set days, hours, minutes and seconds
