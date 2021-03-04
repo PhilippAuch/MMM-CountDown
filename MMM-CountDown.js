@@ -11,6 +11,7 @@ Module.register("MMM-CountDown",{
 		hoursLabel: 'h',
 		minutesLabel: 'm',
 		secondsLabel: 's',
+		loopBy: 'y',
 	},
 
 	// set update interval
@@ -35,6 +36,11 @@ Module.register("MMM-CountDown",{
 		var today = new Date(Date.now());
 		var target = new Date(this.config.date);
 		var timeDiff = target - today;
+        var timeToAdd = this.config.loopBy == 'y' ? new Date(1,0) : new Date(0,1);
+		
+		while (timeDiff < 0) {
+            timeDiff = timeDiff + timeToAdd;
+        }
 
 		// Set days, hours, minutes and seconds
 		var diffDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
