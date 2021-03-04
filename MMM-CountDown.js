@@ -39,9 +39,7 @@ Module.register("MMM-CountDown",{
 		
 		console.log('today', today);
 		console.log('target', target);
-		console.log('timeDiff', timeDiff);
-		console.log('timeToAdd', timeToAdd);
-		
+		console.log('timeDiff', timeDiff);		
 		
 		while (timeDiff < 0) {
 			if (this.config.loopBy == 'y') {
