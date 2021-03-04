@@ -38,9 +38,16 @@ Module.register("MMM-CountDown",{
 		var timeDiff = target - today;
         	var timeToAdd = this.config.loopBy == 'y' ? new Date(1,0) : new Date(0,1);
 		
+		console.log('today', today);
+		console.log('target', target);
+		console.log('timeDiff', timeDiff);
+		console.log('timeToAdd', timeToAdd);
+		
+		
 		while (timeDiff < 0) {
             		target = target + timeToAdd;
 			timeDiff = target - today;
+			console.log('timeDiff after loop', timeDiff);
         	}
 
 		// Set days, hours, minutes and seconds
